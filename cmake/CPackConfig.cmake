@@ -1,0 +1,25 @@
+include(CPack)
+set(CPACK_INSTALLED_DIRECTORIES "${CMAKE_CURRENT_SOURCE_DIR}/package;/")
+
+# meta data
+set(CPACK_PACKAGE_NAME "cpackexample")
+set(CPACK_PACKAGE_VERSION "1.0.0")
+set(CPACK_PACKAGE_DESCRIPTION_SUMMARY "CPack example")
+set(CPACK_PACKAGE_VENDOR "QUICKE SN")
+set(CPACK_PACKAGE_CONTACT "QUICKE SN <st200498@stud.uni-stuttgart.de>")
+set(CPACK_PACKAGE_HOMEPAGE_URL "https://github.com/svquick/cpack-exercise-wt2526#")
+set(CPACK_RESOURCE_FILE_LICENSE "${CMAKE_CURRENT_SOURCE_DIR}/LICENSE")
+set(CPACK_GENERATOR "TGZ;DEB")
+
+# deb packaging
+set(CPACK_DEBIAN_PACKAGE_MAINTAINER "quickesn")
+set(CPACK_DEBIAN_FILE_NAME DEB-DEFAULT)
+set(CPACK_DEBIAN_PACKAGE_SHLIBDEPS YES)
+set(CPACK_DEBIAN_PACKAGE_MAINTAINER "QUICKE SN <st200498@stud.uni-stuttgart.de>")
+set(CPACK_DEBIAN_PACKAGE_DESCRIPTION "CPack example project packaged as a debian package.")
+set(CPACK_DEBIAN_PACKAGE_DEPENDS "libc6, libboost-filesystem, libyaml-cpp")
+
+set(CPACK_STRIP_FILES TRUE)
+set(CPACK_PACKAGE_FILE_NAME "${CPACK_PACKAGE_NAME}-${CPACK_PACKAGE_VERSION}")
+
+include(CPack)

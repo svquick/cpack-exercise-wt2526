@@ -12,7 +12,10 @@ RUN apt-get -qq update && \
         vim \
         tree \
         lintian \
-        unzip
+        unzip \
+        libc6 \
+        libyaml-cpp \
+        libboost-filesystem
         
 # Get, unpack, build, and install yaml-cpp        
 RUN mkdir software && cd software && \
